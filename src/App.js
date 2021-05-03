@@ -8,7 +8,15 @@ const App = () => {
 
   // eslint-disable-next-line no-template-curly-in-string
   const exampleReq = `https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`;
-  
+
+  const[counter, setCounter] =useState(0);
+
+  useEffect(() =>{
+    console.log('Effect has been run');
+  });
+
+
+
 
 
 
@@ -17,7 +25,7 @@ const App = () => {
     <div className='App'>
       <form className='search-form'>
         <input className='search-bar type=' type='text' />
-        <button className='search-button' type='submit'>Search</button>
+        <button onClick={() => setCounter(counter + 1)} className='search-button' type='submit'>{counter}</button>
       </form>
     </div>
   );
